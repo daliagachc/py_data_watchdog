@@ -2,7 +2,7 @@
 # created by diego aliaga daliaga_at_chacaltaya.edu.bo
 
 secret_dic = dict(
-    to_addr_list = ['to@mail.com'],
+    to_addr_list = ['too@mail.com'],
     cc_addr_list = [],
     login        = 'from@mail.com',
     password     = 'pass',
