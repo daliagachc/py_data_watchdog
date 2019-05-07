@@ -15,12 +15,12 @@
 # %%
 conf_dic = dict(
     from_addr    = 'so2_chc',
-    to_addr_list = ['daliaga86@gmail.com'],
+    to_addr_list = [''],
     cc_addr_list = [],
     subject      = 'instrument not measuring',
     message      = '',
     login        = 'bolivia-campaign-user@chacaltaya.edu.bo',
-    password     = 'chacaltaya_5240masl',
+    password     = 'pass here',
     watch_path   = '/tmp/data',
     host         = '10.8.3.33',
     port         = 2105,
