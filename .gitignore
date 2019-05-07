@@ -1,4 +1,4 @@
 .ipynb_checkpoints
 __pycache__
 .idea
-secret_conf
+secret_conf/secret*
