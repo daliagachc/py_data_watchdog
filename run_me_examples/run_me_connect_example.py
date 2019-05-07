@@ -20,7 +20,7 @@ importlib.reload(util);
 
 # secret_conf.secret_conf is the location of the secret_conf file. u can have
 # multiple ones, just edit the following lines
-import secret_conf.secret_conf as secret_conf
+from secret_conf import secret_conf
 # %%
 conf_dic = dict(
     monitor_mode= 'connected', # options: folder, connected, value
@@ -32,7 +32,7 @@ conf_dic = dict(
     login        = secret_conf.secret_dic['login'],
     password     = secret_conf.secret_dic['password'],
     watch_path   = '/tmp/data', # directory that needs to be increasing. mode: folder
-    host         = '10.8.3.34', # in case connection test, this is the address of the monitored computer. mode connected
+    host         = '10.8.3.33', # in case connection test, this is the address of the monitored computer. mode connected
     port         = 2105, # this is the port that we will check is open in the monitored computer. mode connected
     time_interval= 2, #seconds 
     tries        = 3, # tries before sending email (time_interval*tries)

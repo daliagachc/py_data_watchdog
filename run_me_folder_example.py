@@ -14,11 +14,12 @@
 
 # %%
 import util
-import secret_conf.secret_conf as secret_conf
 import importlib
 importlib.reload(util);
 
-
+# secret_conf.secret_conf is the location of the secret_conf file. u can have
+# multiple ones, just edit the following lines
+from secret_conf import secret_conf
 # %%
 conf_dic = dict(
     monitor_mode= 'folder', # options: folder, connected, value

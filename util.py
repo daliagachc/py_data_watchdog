@@ -92,6 +92,7 @@ def watchdog_folder(**conf_dic):
             else: attempt = attempt + 1
         else:
             attempt = 1
+            print('fine')
         time.sleep(conf_dic['time_interval'])
 
 # %%
@@ -110,6 +111,7 @@ def watchdog_connected(**conf_dic):
             else: attempt = attempt + 1
         else:
             attempt = 1
+            print('fine')
         time.sleep(conf_dic['time_interval'])
 
 def watchdog_value(**conf_dic):
@@ -135,5 +137,6 @@ def watchdog_value(**conf_dic):
             else: attempt = attempt + 1
         else:
             attempt = 1
+            print('fine')
         time.sleep(conf_dic['time_interval'])
 
