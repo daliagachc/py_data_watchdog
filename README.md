@@ -1,13 +1,16 @@
 # py_data_watchdog 
-this package is intended to monitor computers taking measurements
+This python package is intended to monitor computers taking measurements
 
-it has the following usages:
+## It has the following usages:
 1. folder size increment 
     - monitors that the directory with data is increasing
 2. computer online 
     - monitor that a machine is connected to the internet 
 3. value within range 
     - monitor that a value is within specifications 
+
+Whenever the watchdog detects a problem, it sends a message a one or directions with 
+a custom message. 
   
 it uses only standard python3 libraries. Therefore no extra packages are needed
 
