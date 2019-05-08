@@ -66,8 +66,8 @@ def test_so2_values(path):
         'pmtv': [-727.5,-726.5],
         'lmpv': [900,950],
         'lmpi': [92,96],
-        'dt'  : [datetime.datetime.now()-datetime.timedelta(minutes=10),
-                 datetime.datetime.now()+datetime.timedelta(minutes=1)]
+        'dt'  : [datetime.datetime.now()-datetime.timedelta(hour=4,minutes=10),
+                 datetime.datetime.now()-datetime.timedelta(hour=3,minutes=59)]
     }
     equal_vals = {
         'Flags': '----LL--',
