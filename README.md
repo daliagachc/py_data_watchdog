@@ -9,7 +9,7 @@ This python package is intended to monitor computers taking measurements
 3. value within range 
     - monitor that a value is within specifications 
 
-Whenever the watchdog detects a problem, it sends a message a one or directions with 
+Whenever the watchdog detects a problem, it sends a message to one or more directions with 
 a custom message. 
   
 it uses only standard python3 libraries. Therefore no extra packages are needed
