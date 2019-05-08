@@ -26,7 +26,9 @@ import glob, datetime
 def test_so2_values(path):
     #     path = '/Users/diego/so2na/data/small/'
     pat = 'chc*.dat'
-    files = glob.glob(path+pat).sort()
+    files = glob.glob(path+pat)
+    files.sort()
+    print(files)
     last_file = files[-1]
     print(last_file)
     with open(last_file, "r") as file:
