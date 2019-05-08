@@ -127,6 +127,7 @@ def watchdog_value(**conf_dic):
 
         if test is False:
             print('error',attempt)
+            print(message)
             if attempt>=tries:
                 mod_conf_dic = conf_dic.copy()
                 mod_conf_dic['message'] = mod_conf_dic['message'] + '\n' + message
