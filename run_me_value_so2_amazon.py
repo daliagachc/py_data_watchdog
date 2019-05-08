@@ -109,7 +109,7 @@ conf_dic = dict(
     port         = 2105, # this is the port that we will check is open in the monitored computer. mode connected
     time_interval= 600, #seconds
     tries        = 3, # tries before sending email (time_interval*tries)
-    value_range  = '/uhel_data/so2_chc', # the value range to be monitored. only needed for mode value
+    value_range  = '/uhel_data/so2_chc/', # the value range to be monitored. only needed for mode value
     value_func   = test_so2_values # function to get the value_range
 
 )
