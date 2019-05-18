@@ -29,6 +29,7 @@ conf_dic = dict(
     cc_addr_list = secret_conf.secret_dic['cc_addr_list'],
     subject      = 'instrument not measuring',
     message      = '',
+    message_normal = 'back to normal',
     login        = secret_conf.secret_dic['login'],
     password     = secret_conf.secret_dic['password'],
     watch_path   = '/tmp/data', # directory that needs to be increasing. mode: folder

@@ -79,6 +79,8 @@ def watchdog_folder(**conf_dic):
     time.sleep(conf_dic['time_interval'])
     tries = conf_dic['tries']
     attempt = 1
+    email_sent = False
+
     while True:
         size2 = get_size(**conf_dic)
         size_dif = size2 - size1
@@ -86,13 +88,19 @@ def watchdog_folder(**conf_dic):
         if size_dif <= 0:
             print('error',attempt)
             if attempt>=tries:
-                print('sending email')
-                sendemail(**conf_dic)
-                attempt = 1
+                if email_sent is False:
+                    print('sending email')
+                    sendemail(**conf_dic)
+                    email_sent = True
             else: attempt = attempt + 1
         else:
             attempt = 1
             print('fine')
+            if email_sent:
+                mod_conf_dic = conf_dic.copy()
+                mod_conf_dic['message'] = conf_dic['message_normal']
+                sendemail(**mod_conf_dic)
+            email_sent = False
         time.sleep(conf_dic['time_interval'])
 
 # %%
@@ -100,18 +108,25 @@ def watchdog_folder(**conf_dic):
 def watchdog_connected(**conf_dic):
     tries = conf_dic['tries']
     attempt = 1
+    email_sent = False
     while True:
-
-        if check_socket(**conf_dic) is False:
+        connected = check_socket(**conf_dic)
+        if connected is False:
             print('error',attempt)
             if attempt>=tries:
-                print('sending email')
-                sendemail(**conf_dic)
-                attempt = 1
+                if email_sent is False:
+                    print('sending email')
+                    sendemail(**conf_dic)
+                    email_sent = True
             else: attempt = attempt + 1
-        else:
+        if connected is True:
             attempt = 1
             print('fine')
+            if email_sent:
+                mod_conf_dic = conf_dic.copy()
+                mod_conf_dic['message'] = conf_dic['message_normal']
+                sendemail(**mod_conf_dic)
+            email_sent = False
         time.sleep(conf_dic['time_interval'])
 
 def watchdog_value(**conf_dic):
@@ -119,6 +134,7 @@ def watchdog_value(**conf_dic):
     attempt = 1
     fun = conf_dic['value_func']
     arg = conf_dic['value_range']
+    email_sent = False
 
     while True:
         fun_res = fun(arg)
@@ -131,13 +147,19 @@ def watchdog_value(**conf_dic):
             if attempt>=tries:
                 mod_conf_dic = conf_dic.copy()
                 mod_conf_dic['message'] = mod_conf_dic['message'] + '\n' + message
-
-                print('sending email')
-                sendemail(**mod_conf_dic)
-                attempt = 1
+                if email_sent is False:
+                    print('sending email')
+                    sendemail(**mod_conf_dic)
+                    email_sent = True
+                # attempt = 1
             else: attempt = attempt + 1
-        else:
+        if test is True:
             attempt = 1
             print('fine')
+            if email_sent:
+                mod_conf_dic = conf_dic.copy()
+                mod_conf_dic['message'] = conf_dic['message_normal']
+                sendemail(**mod_conf_dic)
+            email_sent = False
         time.sleep(conf_dic['time_interval'])
 

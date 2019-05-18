@@ -28,6 +28,7 @@ conf_dic = dict(
     cc_addr_list = secret_conf.secret_dic['cc_addr_list'],
     subject      = 'so2 sync folder at amazon not increasing',
     message      = '',
+    message_normal = 'back to normal',
     login        = secret_conf.secret_dic['login'],
     password     = secret_conf.secret_dic['password'],
     watch_path   = '/uhel_data/so2_chc', # directory that needs to be increasing. mode: folder
