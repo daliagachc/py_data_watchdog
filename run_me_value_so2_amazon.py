@@ -66,7 +66,7 @@ def test_so2_values(path):
         'rctt': [44,46],
         'pres': [393,397],
         'smplfl': [0.28,0.30],
-        'pmtv': [-727.5,-726.5],
+        'pmtv': [-727.5,-725.5],
         'lmpv': [900,950],
         'lmpi': [92,96],
         'dt'  : [datetime.datetime.now()-datetime.timedelta(hours=4,minutes=10),
